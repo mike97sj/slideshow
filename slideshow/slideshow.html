@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>slidershow</title>
+<p dir="ltr"></p>
+
+<head>
+
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <script>
+        //plain js, needs to be put in a script tag on html doc
+
+        var i = 0; //start point
+        var images = [];
+        var time = 3000;
+
+        // Image List 
+
+        images[0] = 'soap_pic1.jpg';
+        images[1] = 'soap_pic2.jpg';
+        images[2] = 'soap_pic3.jpg';
+        images[3] = 'soap_pic4.jpg';
+        images[4] = 'soap_pic5.jpg';
+
+        //change image
+
+        function changeImg() {
+            document.slide.src = images[i]
+            if (i < images.length - 1) {
+                i++;
+            } else {
+                i = 0;
+            }
+
+            setTimeout("changeImg()", time);
+        }
+
+        window.onload = changeImg;
+    </script>
+    <img name="slide" width="400" height="200" alt="soap">
+
+</body>
+
+</html>
